@@ -13,7 +13,7 @@ ex) 4개의 문서(A, B, C, D)가 순서대로 인쇄 대기목록에 있고 중
 2. 인쇄 작업의 중요도는 1~9로 표현하며 숫자가 클수록 중요하다는 뜻입니다.
 3. location은 0 이상 (현재 대기목록에 있는 작업 수 - 1) 이하의 값을 가지며 대기목록의 가장 앞에 있으면 0, 두 번째에 있으면 1로 표현합니다.
 */
-class Solution {
+public class Printer {
     public int solution(int[] priorities, int location) {
         int answer = 1;
         Queue queue = new ArrayDeque();
@@ -56,10 +56,8 @@ class Solution {
         }
         return max;
     }
-}
-public class Printer {
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(solution.solution(new int[] {1, 1, 9, 1, 1, 1},0));
+        Printer printer = new Printer();
+        System.out.println(printer.solution(new int[] {1, 1, 9, 1, 1, 1},0));
     }
 }
