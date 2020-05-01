@@ -11,27 +11,24 @@ k는 1 이상 number의 자릿수 미만인 자연수입니다.
 
 public class CreateLargeNumber {
     char[] chars;
-    int max = 0;
+    long max = 0;
     public void greedy(String prev, int end,int cnt){
-        System.out.println(prev);
         if(prev.length() == end) {
-            max = max < Integer.parseInt(prev) ? Integer.parseInt(prev) : max;
+            max = max < Long.parseLong(prev) ? Long.parseLong(prev) : max;
             return;
         }
-        for (int i = cnt+1; i < chars.length; i++) {
-            greedy(prev + chars[i],end,i);
+        for (int i = cnt; i < chars.length; i++) {
+            greedy(prev + chars[i],end,i+1);
         }
     }
     public String solution(String number, int k) {
         int btw = number.length() - k;
         chars = number.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            greedy("" + chars[i],btw,0);
-        }
+        greedy("",btw,0);
         return String.valueOf(max);
     }
     public static void main(String[] args) {
         CreateLargeNumber createLargeNumber = new CreateLargeNumber();
-        System.out.println(createLargeNumber.solution("19245",3));
+        System.out.println(createLargeNumber.solution("000",1));
     }
 }
