@@ -48,6 +48,28 @@ public class CreateLargeNumber {
         }
         return sb.toString();
     }
+
+    /*
+    또 다른 사람의 풀이
+    public String solution(String number, int k) {
+        char[] result = new char[number.length() - k];
+        Stack<Character> stack = new Stack<>();
+
+        for (int i=0; i<number.length(); i++) {
+            char c = number.charAt(i);
+            while (!stack.isEmpty() && stack.peek() < c && k-- > 0) {
+                stack.pop();
+            }
+            stack.push(c);
+        }
+        for (int i=0; i<result.length; i++) {
+            result[i] = stack.get(i);
+        }
+        return new String(result);
+    }
+    스택을 이용해 깔끔하고 효율적인 코드를 짜냈다...
+    대단하다 ..ㅠ
+     */
     public static void main(String[] args) {
         CreateLargeNumber createLargeNumber = new CreateLargeNumber();
         System.out.println(createLargeNumber.solution("1215841231365",5));
