@@ -10,26 +10,32 @@ public class Joystick {
     public int solution(String name) {
         int answer = 0;
         char[] chars = name.toCharArray();
-        int top = 0 ;
-        int a = 0;
+        // 가까운 알파벳 방향으로 조이스틱 이동횟수
         for (int i = 0; i < chars.length; i++) {
-            //가장 조이스틱 커서에서 가장 가까운 방향으로 조이스틱 이동횟수
-            if(i != 0 && i - top > ((top % chars.length)+(chars.length - i)) && chars[i] != 'A') {
-                answer += (top % chars.length)+(chars.length - i);
-                top = i;
-            } else if(i != 0 && chars[i] != 'A'){
-                answer += i - top;
-                top = i;
-            }
             int x = (int)chars[i] % 65;
-            // 가까운 알파벳 방향으로 조이스틱 이동횟수
-            if(x > 13) answer += 26 - x;
-            else answer += x;
+            answer += x > 13 ? 26 - x : x;
         }
-        return answer;
+
+        int minMove = name.length() - 1;
+
+        //모든 인덱스들에서 'A'가 아닌 곳에서 좌우중 가장 가까운 곳을 찾는다.
+        for(int i = 0 ; i < name.length() ; i++) {
+            if(name.charAt(i) != 'A') {
+                int next = i+1;
+                while(next < name.length() && name.charAt(next) == 'A') {
+                    next++;
+                }
+                // 현재 index 에 2를 곱한 후 전체 길이를 더해준 뒤에 'A'가 아닌 다음 인덱스의 길이만큼을 빼준다.
+                // 모든 인덱스 중 가장 짧은 수가 MIN
+                int move = 2 * i + name.length() - next;
+                minMove = Math.min(move, minMove);
+            }
+        }
+
+        return answer + minMove;
     }
     public static void main(String[] args) {
         Joystick joystick = new Joystick();
-        System.out.println(joystick.solution("JABAAAAAAAAB"));
+        System.out.println(joystick.solution("ABAAAAAAAAAAAAAAAAAAABBBB"));
     }
 }
