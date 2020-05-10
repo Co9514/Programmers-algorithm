@@ -7,18 +7,17 @@ package level2;
 * n은 1이상, 100000이하인 자연수입니다.
  */
 public class FIbonacci {
-    int answer = 0;
-    public void fibonacci(int before ,int now ,int cnt, int n){
-        if (cnt == n) {
-            answer = now % 1234567;
-            return;
-        }
-        int next = (before % 1234567) + (now  % 1234567);
-        fibonacci(now, next, cnt+1, n);
-    }
     public int solution(int n) {
-        fibonacci(0,1,1,n);
-        return answer;
+        int before = 0;
+        int now = 1;
+        int cnt=1;
+        while(cnt < n){
+            int next = (before % 1234567) + (now  % 1234567);
+            before = now;
+            now = next;
+            cnt ++;
+        }
+        return now % 1234567;
     }
 
     public static void main(String[] args) {
