@@ -9,20 +9,17 @@ package level2;
 s에는 둘 이상의 정수가 공백으로 구분되어 있습니다.
  */
 
+import java.util.Arrays;
+
 public class MaxAndMin {
     public String solution(String s){
         String[] x = s.split(" ");
-        int max = Integer.parseInt(x[0]);
-        int min = Integer.parseInt(x[0]);
-        for (int i = 1; i < x.length ; i++) {
-            max = Integer.max(max,Integer.parseInt(x[i]));
-            min = Integer.min(min,Integer.parseInt(x[i]));
-        }
-        return min + " " + max ;
+        Arrays.sort(x);
+        return x[0] + " " + x[x.length-1] ;
     }
 
     public static void main(String[] args) {
         MaxAndMin maxAndMin = new MaxAndMin();
-        System.out.println(maxAndMin.solution("-1 -2 -3 -4"));
+        System.out.println(maxAndMin.solution("-3 -2 -6 -4"));
     }
 }
