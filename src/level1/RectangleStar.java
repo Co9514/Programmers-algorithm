@@ -11,7 +11,7 @@ import java.util.Scanner;
 n과 m은 각각 1000 이하인 자연수입니다.
 */
 
-public class Solution {
+public class RectangleStar {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
