@@ -7,7 +7,7 @@ package level1;
 arr은 길이 1 이상인 배열입니다.
 인덱스 i, j에 대해 i ≠ j이면 arr[i] ≠ arr[j] 입니다.
 */
-import java.util.Arrays;
+
 class RemoveSmallNum {
   public int[] solution(int[] n) {
       if(n.length == 1)return new int[]{-1};

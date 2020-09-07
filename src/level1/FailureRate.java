@@ -26,7 +26,7 @@ stages에는 1 이상 N + 1 이하의 자연수가 담겨있다.
 스테이지에 도달한 유저가 없는 경우 해당 스테이지의 실패율은 0 으로 정의한다.
 */
 
-class Solution {
+class FailureRate {
     public int[] solution(int N, int[] stages) {
         int[] answer = new int[N];
         int users = stages.length;

@@ -1,7 +1,4 @@
-
 package level1;
-
-import java.util.ArrayList;
 
 /*
 문제 설명
@@ -12,7 +9,7 @@ import java.util.ArrayList;
 제한 사항
 두 수는 1이상 1000000이하의 자연수입니다.
 */
-class Solution {
+class LCMandGCF {
   public int[] solution(int n, int m) {
       int a = n , b = m ;
         while(b!=0){

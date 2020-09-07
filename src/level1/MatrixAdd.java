@@ -9,7 +9,7 @@ package level1;
 행렬 arr1, arr2의 행과 열의 길이는 500을 넘지 않습니다.
 */
 
-class Solution {
+class MatrixAdd {
   public int[][] solution(int[][] arr1, int[][] arr2) {
       int x = arr1.length;
         int y = arr1[0].length;

@@ -9,7 +9,7 @@ package level1;
 s는 길이 4 이상, 20이하인 문자열입니다.
 */
 
-class Solution {
+class HideNum {
   public String solution(String phone_number) {
       return "*".repeat(phone_number.length()-4)+phone_number.substring(phone_number.length()-4);
   }

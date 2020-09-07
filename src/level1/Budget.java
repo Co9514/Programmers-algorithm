@@ -19,7 +19,7 @@ d의 각 원소는 부서별로 신청한 금액을 나타내며, 부서별 신�
 budget은 예산을 나타내며, 1 이상 10,000,000 이하의 자연수입니다.
 */
 
-class Solution {
+class Budget {
   public int solution(int[] d, int budget) {
       Arrays.sort(d);
         int sum = 0 ;

@@ -17,7 +17,7 @@ package level1;
 입력된 수, num은 1 이상 8000000 미만인 정수입니다.
 */
 
-class Solution {
+class CollatzConjecture {
   public int solution(int num) {
       if(num == 1 ) return 0;
       int cnt = 0 ;

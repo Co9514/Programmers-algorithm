@@ -10,7 +10,7 @@ package level1;
 x는 1 이상, 10000 이하인 정수입니다.
 */
 
-class Solution {
+class HashadNum {
   public boolean solution(int x) {
         String c = Integer.toString(x);
         int y = 0 ;

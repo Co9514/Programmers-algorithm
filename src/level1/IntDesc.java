@@ -1,3 +1,5 @@
+package level1;
+
 import java.util.*;
 /*
 문제 설명
